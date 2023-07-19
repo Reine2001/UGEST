@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-public class login extends AppCompatActivity {
+public class    login extends AppCompatActivity {
 
 
     @Override
