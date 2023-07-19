@@ -13,17 +13,17 @@ private  UserDao userDao ;
 public  UserRepository(UserDao userDao){
     this.userDao = userDao;
 }
-CompletableFuture<Long> ajouterUser(User user){
+public CompletableFuture<Long> ajouterUser(User user){
    return userDao.ajouterUser(user);
 }
-CompletableFuture<Integer> modifierUser(User user)
+public CompletableFuture<Integer> modifierUser(User user)
 {
     return userDao.modifierUser(user);
 }
-CompletableFuture<Integer> supprimerUser(User user){
+public CompletableFuture<Integer> supprimerUser(User user){
     return userDao.supprimerUser(user);
 }
-CompletableFuture<Integer> supprimerTout(User user){
+public CompletableFuture<Integer> supprimerTout(){
     return userDao.supprimerTout();
 }
 CompletableFuture<LiveData<List<User>>> getUser(User user)
