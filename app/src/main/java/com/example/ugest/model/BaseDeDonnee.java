@@ -2,6 +2,7 @@ package com.example.ugest.model;
 import android.content.Context;
 
 import com.example.ugest.model.dao.UserDao;
+import com.example.ugest.model.entity.User;
 
 import androidx.annotation.Nullable;
 import androidx.room.Database;
@@ -10,7 +11,7 @@ import androidx.room.RoomDatabase;
 
 import kotlin.jvm.Volatile;
 
-@Database(entities ={UserDao.class},version =1 )
+@Database(entities ={User .class},version =1 )
 public abstract class BaseDeDonnee extends RoomDatabase {
     @Volatile
     private static  BaseDeDonnee INSTANCE = null;
