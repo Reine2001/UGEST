@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">UGEST</string>
+    <string name="courses">
+\nAnglais
+\nArabe
+\nLatin
+</string>
+
 </resources>
