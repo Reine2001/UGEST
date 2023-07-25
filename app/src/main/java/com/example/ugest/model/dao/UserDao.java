@@ -15,18 +15,18 @@ import java.util.concurrent.CompletableFuture;
 
 @Dao
 public interface UserDao {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-     CompletableFuture<Long>  ajouterUser(User user);
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void ajouterUser(User user);
 
     @Update
-    CompletableFuture<Integer> modifierUser(User user);
+    int modifierUser(User user);
 
     @Delete
-    CompletableFuture<Integer> supprimerUser(User user);
+    int supprimerUser(User user);
 
-    @Query("DELETE FROM table_utilisateur")
-    CompletableFuture<Integer> supprimerTout();
+    @Query("SELECT * FROM table_utilisateur WHERE id=:pid")
+    User getUser(int pid);
 
     @Query("SELECT * FROM table_utilisateur")
-    CompletableFuture<LiveData<List<User>>> getUser();
+    List<User> getAllUser();
 }
