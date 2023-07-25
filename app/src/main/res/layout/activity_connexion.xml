@@ -85,30 +85,32 @@
                android:layout_marginTop="50dp"/>
 
            <EditText
+               android:id="@+id/username"
                android:layout_width="match_parent"
                android:layout_height="50dp"
-               android:background="@drawable/edit_text_background"
-               android:hint="nom d'utilisateur"
-               android:drawableStart="@drawable/outline_email_24"
-               android:padding="10dp"
-               android:paddingStart="10dp"
-               android:drawableTint="@color/black"
                android:layout_marginStart="20dp"
+               android:layout_marginTop="20dp"
                android:layout_marginEnd="20dp"
-               android:layout_marginTop="20dp"/>
+               android:background="@drawable/edit_text_background"
+               android:drawableStart="@drawable/outline_email_24"
+               android:drawableTint="@color/black"
+               android:hint="nom d'utilisateur"
+               android:padding="10dp"
+               android:paddingStart="10dp" />
 
            <EditText
+               android:id="@+id/password"
                android:layout_width="match_parent"
                android:layout_height="50dp"
-               android:background="@drawable/edit_text_background"
-               android:hint="mot de passe"
-               android:drawableStart="@drawable/outline_lock_24"
-               android:padding="10dp"
-               android:paddingStart="10dp"
-               android:drawableTint="@color/black"
                android:layout_marginStart="20dp"
+               android:layout_marginTop="10dp"
                android:layout_marginEnd="20dp"
-               android:layout_marginTop="10dp"/>
+               android:background="@drawable/edit_text_background"
+               android:drawableStart="@drawable/outline_lock_24"
+               android:drawableTint="@color/black"
+               android:hint="mot de passe"
+               android:padding="10dp"
+               android:paddingStart="10dp" />
 
            <TextView
                android:layout_width="wrap_content"
@@ -119,6 +121,7 @@
                android:layout_marginTop="10dp"/>
 
            <androidx.appcompat.widget.AppCompatButton
+               android:id="@+id/ButtonConnection"
                android:layout_width="160dp"
                android:layout_height="wrap_content"
                android:layout_gravity="center_horizontal"
@@ -126,7 +129,7 @@
                android:background="@drawable/button_background"
                android:text="Se connecter"
                android:textColor="@color/white"
-               android:textSize="20dp"/>
+               android:textSize="20dp" />
 
        </LinearLayout>
    </androidx.cardview.widget.CardView>

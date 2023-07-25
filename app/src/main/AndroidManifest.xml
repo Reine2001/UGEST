@@ -19,8 +19,8 @@
             android:name=".detailed"
             android:exported="false" />
         <activity
-            android:name=".splash_screen"
-            android:exported="false" />
+            android:name=".MainActivity"
+            android:exported="true" />
         <activity
             android:name=".utilisateurs"
             android:exported="false" />
@@ -34,7 +34,7 @@
             android:name=".login"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".splash_screen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
