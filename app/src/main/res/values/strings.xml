@@ -5,5 +5,24 @@
 \nArabe
 \nLatin
 </string>
+    <string name="UGEST">
+\nGérez facilement les étudiants avec UGEST
+\nDécouvrez toutes les fonctionnalités en parcourant l'application
+
+</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Accueil</string>
+    <string name="utilisateurs">Utilisateurs</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="modifier">Modifier</string>
+    <string name="fab_content_description">Accueil</string>
+    <string name="text_view3_text">Tous les utilisateurs</string>
+    <string name="text_view4_text">Bienvenu...</string>
+    <string name="edit_text_hint_search">Rechercher...</string>
+
+
+
+
 
 </resources>
