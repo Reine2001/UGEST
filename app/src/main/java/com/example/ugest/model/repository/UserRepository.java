@@ -1,35 +1,55 @@
 package com.example.ugest.model.repository;
+import android.content.Context;
+
 import androidx.lifecycle.LiveData;
 
 
+import com.example.ugest.model.BaseDeDonnee;
 import com.example.ugest.model.dao.UserDao;
 import com.example.ugest.model.entity.User;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class UserRepository {
-private  UserDao userDao ;
-public  UserRepository(UserDao userDao){
-    this.userDao = userDao;
+private BaseDeDonnee userBase;
+private Executor executor = Executors.newSingleThreadExecutor();
+
+public  UserRepository(Context context){
+    userBase = BaseDeDonnee.getInstance(context);
 }
-public CompletableFuture<Long> ajouterUser(User user){
-   return userDao.ajouterUser(user);
+public void  ajouterUser(User user){
+    executor.execute(new Runnable() {
+        @Override
+        public void run() {
+            userBase.userDao.ajouterUser(user);
+        }
+    });
 }
-public CompletableFuture<Integer> modifierUser(User user)
+public void modifierUser(User user)
 {
-    return userDao.modifierUser(user);
+    executor.execute(new Runnable() {
+        @Override
+        public void run() {
+            userBase.userDao.modifierUser(user);
+        }
+    });
+
 }
-public CompletableFuture<Integer> supprimerUser(User user){
-    return userDao.supprimerUser(user);
+public void supprimerUser(User user){
+
+  executor.execute(new Runnable() {
+      @Override
+      public void run() {
+          userBase.userDao.supprimerUser(user);
+      }
+  });
+
 }
-public CompletableFuture<Integer> supprimerTout(){
-    return userDao.supprimerTout();
+public List<User> getAllUser(){
+    return userBase.userDao.getAllUser();
 }
-CompletableFuture<LiveData<List<User>>> getUser(User user)
-{
-    return userDao.getUser();
-}
-CompletableFuture<LiveData<List<User>>> ListeUser = userDao.getUser();
 }
 
