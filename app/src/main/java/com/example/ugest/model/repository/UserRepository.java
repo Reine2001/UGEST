@@ -20,13 +20,8 @@ private Executor executor = Executors.newSingleThreadExecutor();
 public  UserRepository(Context context){
     userBase = BaseDeDonnee.getInstance(context);
 }
-public void  ajouterUser(User user){
-    executor.execute(new Runnable() {
-        @Override
-        public void run() {
-            userBase.userDao.ajouterUser(user);
-        }
-    });
+public CompletableFuture<Void> ajouterUser(User user){
+    return CompletableFuture.runAsync(()->userBase.userDao.ajouterUser(user), executor);
 }
 public void modifierUser(User user)
 {
@@ -48,7 +43,7 @@ public void supprimerUser(User user){
   });
 
 }
-public List<User> getAllUser(){
+public LiveData<List<User>> getAllUser(){
     return userBase.userDao.getAllUser();
 }
 }

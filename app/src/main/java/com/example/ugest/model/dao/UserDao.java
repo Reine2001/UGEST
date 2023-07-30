@@ -16,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 @Dao
 public interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void ajouterUser(User user);
+     void ajouterUser(User user);
 
     @Update
     int modifierUser(User user);
@@ -24,9 +24,9 @@ public interface UserDao {
     @Delete
     int supprimerUser(User user);
 
-    @Query("SELECT * FROM table_utilisateur WHERE id=:pid")
+    @Query("SELECT * FROM table_utilisateur WHERE id_utilisateur=:pid")
     User getUser(int pid);
 
     @Query("SELECT * FROM table_utilisateur")
-    List<User> getAllUser();
+    LiveData<List<User>> getAllUser();
 }

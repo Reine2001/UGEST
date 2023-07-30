@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 if (isValidCredential(user,password)){
                     Intent intent = new Intent(MainActivity.this,BottomNavigation.class);
                     startActivity(intent);
+                    finish();
                 }
                 else {
                     // Afficher un message d'erreur dans un popup disant "Incorrect, réessayez"

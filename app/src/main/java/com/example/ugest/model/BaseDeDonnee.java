@@ -16,8 +16,10 @@ import java.util.concurrent.locks.Lock;
 
 import kotlin.jvm.Volatile;
 
-@Database(entities ={User.class},version =1 )
+@Database(entities ={User.class},exportSchema = false,version =2 )
 public abstract class BaseDeDonnee extends RoomDatabase {
+
+
     @Volatile
     public static  BaseDeDonnee instance;
     public static String Base_name = "user_BD";
@@ -28,11 +30,13 @@ public abstract class BaseDeDonnee extends RoomDatabase {
         if (instance == null){
             synchronized (LOCK){
                 instance = Room.databaseBuilder(context.getApplicationContext(),
-                        BaseDeDonnee.class,Base_name).allowMainThreadQueries()
+                        BaseDeDonnee.class,Base_name)
                         .build();
+                instance.userDao = instance.createUserDao();
             }
         }
         return instance;
     }
+    public  abstract UserDao createUserDao();
 
 }

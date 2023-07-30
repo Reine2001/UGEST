@@ -42,10 +42,11 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/buttonListUser"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/outline_groups_24"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/outline_groups_24" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -77,10 +78,13 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/buttonAdd"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/outline_group_add_24"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:onClick="showAddUserDialog"
+                    android:src="@drawable/outline_group_add_24" />
 
                 <TextView
                     android:layout_width="wrap_content"
