@@ -103,6 +103,9 @@ public class BottomNavigation extends AppCompatActivity {
 
             }
         });
+        userNomEditText.setText("");
+    userPrenomText.setText("");
+        userCoursEditText.setText("");
 
         Toast.makeText(BottomNavigation.this, "Utilisateur ajouté", Toast.LENGTH_SHORT).show();
 
